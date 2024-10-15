@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>FORMULÁRIO 11 MESES DE NAMORO</title>
+    <title>Formulário 11 Meses de Namoro</title>
 </head>
 <body>
-    <h1 class="titulo">FORMULÁRIO 11 MESES DE NAMORO</h1>
-    <div class="fotos-container">
+    <h2>FORMULÁRIO 11 MESES DE NAMORO</h2>
+    <div class="fotos-perguntas">
         <div class="foto-mes">
             <img src="imagens/novembro23.jpg" alt="Novembro">
             <p>Novembro</p>
@@ -58,49 +58,59 @@
             <p>Outubro</p>
         </div>
     </div>
-    <h2 class="perguntas-titulo">Perguntas</h2>
-    <form id="respostasForm">
-        <div class="pergunta">
-            <label for="pergunta1">Pergunta 1:</label>
-            <textarea id="pergunta1" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta2">Pergunta 2:</label>
-            <textarea id="pergunta2" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta3">Pergunta 3:</label>
-            <textarea id="pergunta3" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta4">Pergunta 4:</label>
-            <textarea id="pergunta4" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta5">Pergunta 5:</label>
-            <textarea id="pergunta5" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta6">Pergunta 6:</label>
-            <textarea id="pergunta6" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta7">Pergunta 7:</label>
-            <textarea id="pergunta7" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta8">Pergunta 8:</label>
-            <textarea id="pergunta8" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta9">Pergunta 9:</label>
-            <textarea id="pergunta9" rows="3" required></textarea>
-        </div>
-        <div class="pergunta">
-            <label for="pergunta10">Pergunta 10:</label>
-            <textarea id="pergunta10" rows="3" required></textarea>
-        </div>
-        <button type="submit">Enviar Respostas</button>
-    </form>
+
+    <div class="perguntas">
+        <label for="pergunta1">Pergunta 1:</label>
+        <textarea id="pergunta1" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta2">Pergunta 2:</label>
+        <textarea id="pergunta2" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta3">Pergunta 3:</label>
+        <textarea id="pergunta3" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta4">Pergunta 4:</label>
+        <textarea id="pergunta4" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta5">Pergunta 5:</label>
+        <textarea id="pergunta5" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta6">Pergunta 6:</label>
+        <textarea id="pergunta6" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta7">Pergunta 7:</label>
+        <textarea id="pergunta7" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta8">Pergunta 8:</label>
+        <textarea id="pergunta8" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta9">Pergunta 9:</label>
+        <textarea id="pergunta9" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <label for="pergunta10">Pergunta 10:</label>
+        <textarea id="pergunta10" placeholder="Digite sua resposta aqui..."></textarea>
+
+        <button class="button" onclick="saveAnswers()">Salvar Respostas</button>
+    </div>
+
+    <script>
+        function saveAnswers() {
+            const answers = {
+                pergunta1: document.getElementById('pergunta1').value,
+                pergunta2: document.getElementById('pergunta2').value,
+                pergunta3: document.getElementById('pergunta3').value,
+                pergunta4: document.getElementById('pergunta4').value,
+                pergunta5: document.getElementById('pergunta5').value,
+                pergunta6: document.getElementById('pergunta6').value,
+                pergunta7: document.getElementById('pergunta7').value,
+                pergunta8: document.getElementById('pergunta8').value,
+                pergunta9: document.getElementById('pergunta9').value,
+                pergunta10: document.getElementById('pergunta10').value,
+            };
+
+            localStorage.setItem('answers', JSON.stringify(answers));
+            window.location.href = 'respostas.html';
+        }
+    </script>
 </body>
 </html>

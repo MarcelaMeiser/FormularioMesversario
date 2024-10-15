@@ -1,19 +1,22 @@
-function baixarRespostas() {
-    const usuario = new URLSearchParams(window.location.search).get('usuario'); // Captura o nome do usuário a partir da URL
-    const respostas = [];
+document.getElementById("salvarRespostas").addEventListener("click", function() {
+    const respostas = {
+        pergunta1: document.getElementById("pergunta1").value,
+        pergunta2: document.getElementById("pergunta2").value,
+        pergunta3: document.getElementById("pergunta3").value,
+        pergunta4: document.getElementById("pergunta4").value,
+        pergunta5: document.getElementById("pergunta5").value,
+        pergunta6: document.getElementById("pergunta6").value,
+        pergunta7: document.getElementById("pergunta7").value,
+        pergunta8: document.getElementById("pergunta8").value,
+        pergunta9: document.getElementById("pergunta9").value,
+        pergunta10: document.getElementById("pergunta10").value
+    };
+
+    const usuario = new URLSearchParams(window.location.search).get('usuario');
+    const respostasStr = JSON.stringify(respostas);
+
+    localStorage.setItem(`respostas_${usuario}`, respostasStr);
     
-    for (let i = 0; i < 10; i++) { // Total de 10 perguntas
-        const resposta = document.getElementById(`resposta_${i}`).value || "Resposta não dada.";
-        respostas.push(`Pergunta ${i + 1}: ${resposta}`);
-    }
-
-    // Cria um blob com as respostas
-    const blob = new Blob([respostas.join("\n")], { type: "text/plain" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = `${usuario}_respostas.txt`; // Nome do arquivo
-    link.click(); // Aciona o download
-
-    // Limpa o formulário após o download
-    document.getElementById("formulario").reset();
-}
+    // Redireciona para a página de respostas
+    window.location.href = `respostas.html?usuario=${usuario}`;
+});

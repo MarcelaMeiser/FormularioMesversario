@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Seleção de Usuário</title>
+    <title>Quem é você?</title>
 </head>
 <body>
-    <h1>Quem é você?</h1>
-    <div class="selecao-usuario">
-        <div class="usuario" onclick="selectUser('Marcela')">
-           <img src="imagens/FotoMarcela.jpg" alt="Marcela">
+    <h1 class="titulo">Quem é você?</h1>
+    <div class="usuario-container">
+        <div class="usuario" onclick="location.href='formulario.html?usuario=marcela'">
+            <img src="imagens/FotoMarcela.jpg" alt="Marcela">
             <p>Marcela</p>
         </div>
-        <div class="usuario" onclick="selectUser('Helena')">
+        <div class="usuario" onclick="location.href='formulario.html?usuario=helena'">
             <img src="imagens/fotoHelena.jpg" alt="Helena">
             <p>Helena</p>
         </div>
     </div>
+</body>
+</html>
 
     <script>
         function selectUser(user) {

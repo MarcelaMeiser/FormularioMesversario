@@ -18,6 +18,13 @@
         const answers = JSON.parse(localStorage.getItem('answers'));
         const userFotoDiv = document.getElementById('usuarioFoto');
 
+        // Adicionando foto do usuário
+        if (user === 'Marcela') {
+            userFotoDiv.innerHTML = '<img src="C:/Users/Marcela Meiser/Desktop/meiser/FotoMarcela.jpg" alt="Foto Marcela" style="width: 400px; height: 400px; border-radius: 50%;">';
+        } else {
+            userFotoDiv.innerHTML = '<img src="C:/Users/Marcela Meiser/Desktop/meiser/fotoHelena.jpg" alt="Foto Helena" style="width: 400px; height: 400px; border-radius: 50%;">';
+        }
+
         const respostasDiv = document.querySelector('.respostas');
         for (let i = 1; i <= 10; i++) {
             respostasDiv.innerHTML += `<p>Pergunta ${i}: ${answers[`pergunta${i}`]}</p>`;

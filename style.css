@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.titulo {
+    text-align: center;
+    color: blue;
+}
+
+.usuario-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.usuario {
+    text-align: center;
+    margin: 0 20px;
+}
+
+.usuario img {
+    width: 600px; /* Tamanho da foto do usuário */
+    height: auto; /* Mantém a proporção */
+    border-radius: 10px;
+}
+
+.fotos-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin: 20px;
+}
+
+.fotos-container img {
+    width: 300px; /* Tamanho das fotos na página de perguntas */
+    height: auto;
+    border-radius: 10px;
+}
+
+.perguntas-titulo {
+    text-align: center;
+    color: pink;
+    margin-top: 20px;
+}
+
+.pergunta {
+    margin: 15px 0;
+}
+
+.pergunta textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

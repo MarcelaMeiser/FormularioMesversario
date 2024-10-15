@@ -21,10 +21,12 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: row; /* Mudança para linha */
+    gap: 20px;
 }
 
 .usuario {
     margin: 20px;
+    text-align: center;
 }
 
 .usuario img {
